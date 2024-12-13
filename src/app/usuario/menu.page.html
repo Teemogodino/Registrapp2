@@ -1,0 +1,66 @@
+
+
+<ion-content [fullscreen]="true">
+  <div id="head">
+
+  </div>
+
+  <div id="contenedor">
+    <div id="titulo">
+      <h1>Usuario</h1>
+    </div>
+
+      <div id="ContenedorDetallestrue">
+        <h2 >
+          Usuario:
+        </h2>
+        <h3 >
+          {{ usuarioActual[1] }}
+        </h3>
+
+        <h2 >
+          Correo:
+        </h2>
+          <h3 >
+            {{ usuarioActual[2].slice(0, 3) + '*'.repeat(usuarioActual[2].length - 3) }}        </h3>
+
+        <h2 >
+          Contraseña:
+        </h2>
+
+        <h3>
+          {{ mostrarContrasena ? usuarioActual[3] : ('*'.repeat(usuarioActual[3].length)) }}        
+        </h3>
+
+        <button id="mostrarContraseña" (click)="toggleMostrarContrasena()">
+          {{ mostrarContrasena ? 'Ocultar contraseña' : 'Mostrar contraseña' }}
+        </button>
+      </div>
+
+
+
+      <!--
+            <div id="mitadIzquierda">
+        <h3>Usuario :</h3>
+        <h3>Correo :</h3>
+        <h3>Contraseña :</h3>
+      </div>
+  
+      <div id="mitadDerecha">
+        <h3>{{ usuarioActual[1] }}</h3>
+        <h3>{{ usuarioActual[2] }} </h3>
+        <h3> {{ usuarioActual[3] }} </h3>
+      </div>  
+      -->
+
+
+
+   
+
+      <ion-button shape="round" style="--background: var(--color-comp); --color: var(--texto-titulo); --background-activated: var(--texto-titulo); --color-activated: var(--color-comp);" (click)="cambiarNombreUsuario()" >
+        Remplazar nombre de usuario</ion-button>
+      <ion-button shape="round"  style="--background: var(--color-comp); --color: var(--texto-titulo); --background-activated: var(--texto-titulo); --color-activated: var(--color-comp);" (click)="cambiarContrasena()">
+        Reemplazar contraseña </ion-button>
+    </div>
+
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+  <div id="head">
+    <ion-icon src="/assets/{{icono}}.svg" id="tema"></ion-icon>
+  </div>
+  <div id="contenedor">
+
+    <div id="titulo">
+      <h3>RegistrAPP</h3>
+      <h1>Registrate</h1>
+    </div>
+    <div id="loginBox">
+      <div id="contenedorTrans">
+        <form (ngSubmit)="tryRegistrar()" id="formularioRegistro">
+          
+            <ion-input  label="Usuario" name="usuario" label-placement="floating" fill="outline" placeholder="Cree su usuario" [counter]="true" maxlength="50"  [(ngModel)]="usuarioRegistro" > <ion-icon slot="start" name="person" aria-hidden="true" ></ion-icon> </ion-input>
+            <ion-input label="Correo"  name="correo" type="email" clearOnEdit="false" label-placement="floating" fill="outline" placeholder="Coloque su correo" [counter]="true" maxlength="100" errorText="Correo invalido"   ngModel email [(ngModel)]="correoRegistro" required #correoInput="ngModel" > <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon> </ion-input>
+            <ion-input label="Contraseña" name="contrasena"  type="password" clearOnEdit="false" label-placement="floating" fill="outline" placeholder="Cree su contraseña" [counter]="true" maxlength="35" [(ngModel)]="contrasenaRegistro"> <ion-icon slot="start" name="lock-closed" aria-hidden="true" ></ion-icon> </ion-input>
+            <ion-input label="Confirmar Contraseña" name="confirmarContrasena"  type="password" clearOnEdit="false" label-placement="floating" fill="outline" placeholder="Confirme  su contraseña" [counter]="true" maxlength="35" [(ngModel)]="confirmarContrasenaRegistro"> <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon> </ion-input>
+            <button type="submit" fill="clear" id="boton" [disabled]="correoInput.invalid && correoInput.touched || correoInput.invalid && correoInput.dirty || correoInput.pristine"  ><ion-icon slot="icon-only" name="arrow-forward"   ></ion-icon></button>
+        </form>
+      </div>
+
+      <ion-alert
+        trigger="usuarioCreado"
+        header="Usuario Creado"
+        [buttons]="alertButtons"
+      ></ion-alert>
+      </div>
+    <div id="links">
+      <ion-button fill="clear" id="alerta-registro" >Login</ion-button>
+
+    </div>
+  </div>
+
+  <ion-alert
+  trigger="alerta-registro"
+  header="Volver sin guardar usuario?"
+  [buttons]="alertButtons"
+  (didDismiss)="setResult($event)"
+></ion-alert>
+</ion-content>

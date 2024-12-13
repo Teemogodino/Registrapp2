@@ -1,0 +1,43 @@
+
+
+<ion-content [fullscreen]="true">
+  <div id="head">
+
+  </div>
+  <h1>Asistencias</h1>
+  <div id="contenedor">
+    <table id="tabla">       
+
+    <div *ngIf="asistencia?.length == 0">
+      No cuentas con asistencias
+    </div>
+
+    <div *ngIf="asistencia.length > 0">
+
+      <tr>
+        <th>Materia</th>
+        <th>¿Presente?</th>
+        <th>Fecha</th>
+        <th>Hora Inicio</th>
+        <th>Hora Fin</th>
+      </tr>
+      
+      <tr *ngFor="let clase of asistencia; index as indice">
+
+
+
+        <td>{{ clase.nombreMateria}}</td>
+        <td> si </td>
+        <td>{{ clase.fechaClase }}</td>
+        <td>{{ clase.horaInicio}}</td>
+        <td>{{ clase.fechaFin }}</td>
+
+    </tr>
+    </div>
+
+
+    </table>
+
+
+  </div>
+</ion-content>

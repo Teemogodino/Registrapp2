@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <div id="contenedor">
+    
+    <div id="head">
+      <ion-icon src="/assets/{{icono}}.svg" id="tema" (click)="animarTema()"></ion-icon>
+    </div>
+
+    <div id="titulo">
+      <h3>RegistrAPP</h3>
+      <h1>Login</h1>
+    </div>
+    <div id="loginBox">
+      <div id="contenedorTrans">
+        <form (ngSubmit)="tryLogin()" id="formularioLogin">
+            <ion-input label="Correo" name="Usuario" label-placement="floating" fill="outline" placeholder="Ingrese su correo" errorText="Ingrese un correo correcto" ngModel email [(ngModel)]="usuarioLogin"  type="email" > <ion-icon slot="start" name="person" aria-hidden="true" ></ion-icon> </ion-input>
+            <ion-input label="Contraseña" name="Contrasena" type="password" clearOnEdit="false" label-placement="floating" fill="outline" placeholder="Ingrese su contraseña" [(ngModel)]="contrasenaLogin" > <ion-icon slot="start" name="lock-closed" aria-hidden="true" ></ion-icon> </ion-input>
+            <button type="submit" fill="clear" id="boton" ><ion-icon slot="icon-only" name="arrow-forward"  ></ion-icon></button>
+        </form>
+      </div>
+
+
+
+      </div>
+    <div id="links">
+      <ion-button fill="clear" id="registrate-trigger" (click)="irARegistro()" >Registrate</ion-button>
+      
+
+      <ion-button fill="clear" id="olvidar-contraseña-trigger">¿Olvidaste tu contraseña?</ion-button>
+      <ion-alert
+      trigger="olvidar-contraseña-trigger"
+      header="Ingresa tu correo "
+      message="Se te enviara un correo para restaurar tu contraseña"
+      [buttons]="alertButtons"
+      [inputs]="alertInputs"
+      ></ion-alert>
+
+
+
+    </div>
+
+  </div>
+</ion-content>

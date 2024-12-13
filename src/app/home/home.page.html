@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+
+  <div id="head">
+
+  </div>
+
+  <div id="contenedor">
+    <div id="titulo">
+      <h1 >RegistrAPP</h1>
+    </div>
+
+      <div id="asistencias">
+        <p></p>
+      </div>
+      <div id="opciones">
+        <ion-button  shape="round" style="--background: var(--color-comp); --color: var(--texto-titulo);   --background-activated: var(--texto-titulo); --color-activated: var(--color-comp);" (click)="scan2()">Tomar asistencia</ion-button> 
+        <ion-button shape="round" style="--background: var(--color-comp); --color: var(--texto-titulo); --background-activated: var(--texto-titulo); --color-activated: var(--color-comp); " [routerLink]="['/usuario']">Usuario</ion-button>
+        <ion-button shape="round" style="--background: var(--color-comp); --color: var(--texto-titulo); --background-activated: var(--texto-titulo); --color-activated: var(--color-comp); "  [routerLink]="['/asistencias']" >Asistencias</ion-button>
+      </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,86 @@
+#head{
+    background-color: var(--color-comp);
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  
+}
+  
+h1{
+    font-size: 3rem;
+    font-weight: 600;
+    width: 100%;
+    height: 10%;
+    border-bottom: 2px solid var(--texto-titulo);
+    color: var(--texto-titulo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#usuario{
+    color: var(--texto-titulo)
+}
+  
+#contenedor{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background-color : var(--color-fondo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: auto;
+    
+}
+
+
+
+#tabla{
+    max-height: 70%;
+    height: 70%;
+    width: 100%;
+    color: var(--texto-titulo);
+    background-color: var(--color-fondo);
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-y: auto;
+    display: block; 
+    white-space: nowrap;
+}
+
+#Fecha
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+td{
+    text-align: center; 
+    width: 100%;
+    height: 20px;
+    font-size: .8rem;
+    padding: 0px 5px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    align-items: center;
+}
+tr{
+    width: 100%;
+    border-bottom: 1px var(--color-comp) solid;
+}
+h1{
+    text-align: center;
+    color: var(--texto-titulo);
+    background-color: var(--color-fondo);
+    margin:0px;
+    padding: 10px;
+}
